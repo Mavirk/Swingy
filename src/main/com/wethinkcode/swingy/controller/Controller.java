@@ -100,10 +100,12 @@ public class Controller {
 				if (model.hero.getCurrentTile().getEnemy().getHp() <= 0){
 					lootMenu();
 					model.hero.getCurrentTile().killEnemy();
-				}
+				}else if (model.hero.getHp() <= 0) deathMenu();
 				break;
 			case win:
-				exit();
+				saveGame();
+				if(input.equals("continue"))mainMenu();
+				else if(input.equals("exit"))exit();
 				break;
 			case death:
 				if(input.equals("main"))mainMenu();
@@ -124,6 +126,9 @@ public class Controller {
 		currentState = state.newGame;
 		model.world = model.generateWorld(0);
 		characterName();
+	}
+	public void saveGame(){
+		swingView.save();
 	}
 
 	public void loadGame(){
@@ -165,12 +170,23 @@ public class Controller {
 			swingView.loot(model.hero.getCurrentTile().getEnemy().artifact);
 			getConsoleInput();
 		}
-		else swingView.printLine("No loot found in the corpse");
+		else {
+			swingView.printLine("No loot found in the corpse");
+			navigationMenu();
+		}
+	}
+
+	public void deathMenu() {
+		currentState = state.death;
+		swingView.death();
+		getConsoleInput();
 	}
 
 	public void win(){
 		currentState = state.win;
 		swingView.printLine("You escaped the map well done");
+		swingView.printLine("continue");
+		swingView.printLine("exit");
 		getConsoleInput();
 	}
 
@@ -213,38 +229,8 @@ public class Controller {
 				swingView.invalid(input);
 		}
 	}
-	public void doNothing(){}
-//
-//    public void deathMenu() {
-//        swingView.load();
-//        if(console) input = getConsoleInput();
-//        switch (input){
-//            case "main":
-//                mainMenu();
-//                break;
-//            case "exit":
-//                break;
-//            default:
-//                swingView.invalid();
-//        }
-//    }
-//
-//    public void saveGame(){
-//        swingView.save();
-//        if(console) input = getConsoleInput();
-//        switch (input){
-//            case "yes":
-//                break;
-//            case "no":
-//                break;
-//            default:
-//                swingView.invalid();
-//
-//        }
-//    }
-//
-//}
-	
-	
-	
+	public void doNothing(){
+		assert true;
+	}
+
 }

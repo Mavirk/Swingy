@@ -219,10 +219,7 @@ public class Swingy extends JFrame implements View{
 	}
 	@Override
 	public void save(){
-		printLine("saveGame");
-		printLine("Would you like to save your game ??");
-		printLine("yes");
-		printLine("no");
+		printLine("Game Saved");
 	}
 	@Override
 	public void load(){

@@ -116,10 +116,7 @@ public class Console implements View {
 	}
 	@Override
 	public void save(){
-		System.out.print("saveGame");
-		System.out.print("Would you like to save your game ??");
-		System.out.print("yes");
-		System.out.print("no");
+		System.out.print("Game Saved");
 	}
 	@Override
 	public void load(){
