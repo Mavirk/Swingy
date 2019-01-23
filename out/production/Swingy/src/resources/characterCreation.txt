@@ -1,0 +1,10 @@
+Tell us a bit about yourself...
+
+Whats Your Name?
+#
+Whats Your Class?
+Archer
+Wizard
+Knight
+Paladin
+#
