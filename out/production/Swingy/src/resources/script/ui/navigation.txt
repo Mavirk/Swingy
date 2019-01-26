@@ -1,6 +1,0 @@
-Where to go? ... Where to go?
-north
-east
-south
-west
-0
