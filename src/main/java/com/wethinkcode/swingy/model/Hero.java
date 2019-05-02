@@ -92,6 +92,13 @@ public class Hero {
         System.out.println("you looked at the tile");
     }
 
+    public void levelUp(){
+        setLevel(lvl + 1);
+        setAtk(atk + getLevel());
+        setDef(def + getLevel());
+        setHp(hp + getLevel());
+    }
+
 //    getters
 
     public Tile getCurrentTile() {
@@ -124,6 +131,24 @@ public class Hero {
     }
     public int getY(){
         return yCoor;
+    }
+    public Artifact getItemArtifact(String itemName){
+        Artifact item;
+
+        switch(itemName){
+            case "helm":
+                item = helm;
+                break;
+            case "armour":
+                item = armour;
+                break;
+            case "weapon":
+                item = weapon;
+                break;
+            default:
+                item = null;
+        }
+        return item;
     }
 
 //    setters

@@ -75,7 +75,7 @@
                     <manifest>
                         <addClasspath>true</addClasspath>
                         <classpathPrefix>dependencies/</classpathPrefix>
-                        <mainClass>avaj.app.main.Main</mainClass>
+                        <mainClass>com.wethinkcode.swingy.Main</mainClass>
                     </manifest>
                 </archive>
             </configuration>

@@ -87,8 +87,12 @@ public class Controller {
 				fightOutcome();
 				break;
 			case lootMenu:
-				if(input.equals("take")) model.hero.putArtifact(model.hero.getCurrentTile().getEnemy().artifact);
-				else if(input.equals("leave"));
+				if(input.equals("take")) {
+					if(model.hero.getCurrentTile().getEnemy().artifact != null){
+						model.hero.putArtifact(model.hero.getCurrentTile().getEnemy().artifact);
+						System.out.println("I have a new " + model.hero.getItemArtifact(model.hero.getCurrentTile().getEnemy().artifact.type).name);
+					}else System.out.println("there is nothiung even though there should be something");
+				}else if(input.equals("leave"));
 				else swingView.invalid(input);
 				break;
 			case battle:
@@ -100,8 +104,9 @@ public class Controller {
 				}else if (model.hero.getHp() <= 0) deathMenu();
 				break;
 			case win:
+				model.hero.levelUp();
 				saveGame();
-				if(input.equals("continue"))mainMenu();
+				if(input.equals("continue"))continueGame();
 				else if(input.equals("exit"))exit();
 				break;
 			case death:
@@ -117,6 +122,10 @@ public class Controller {
 		currentState = state.main;
 		swingView.main();
 		getConsoleInput();
+	}
+
+	public void continueGame(){
+		
 	}
 
 	public void newGame(){
@@ -169,8 +178,8 @@ public class Controller {
 		}
 		else {
 			swingView.printLine("No loot found in the corpse");
-			navigationMenu();
 		}
+		navigationMenu();
 	}
 
 	public void deathMenu() {
