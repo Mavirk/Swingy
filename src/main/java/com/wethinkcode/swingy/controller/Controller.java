@@ -9,7 +9,9 @@ public class Controller {
 	public enum state{
 		main,
 		newGame,
+		saveGame,
 		loadGame,
+		getSavedGames,
 		characterName,
 		characterCreation,
 		navigation,
@@ -22,12 +24,13 @@ public class Controller {
 		loot,
 		invalid
 	}
-	public String resourcesPath = "../../resources";
+	public String resourcesPath = "../../resources/saved/";
 	public String input = null;
 	private String playerName;
 	public state currentState = state.main;
 	public Model model = new Model();
 	public View swingView;
+	public LoaderSaver loaderSaver;
 
 
 	public boolean exit = false;
@@ -61,7 +64,7 @@ public class Controller {
 		switch(currentState){
 			case main:
 				if(input.equals("new"))newGame();
-				else if(input.equals("load"))loadGame();
+				else if(input.equals("load"))getSavedGame();
 				break;
 			case newGame:
 				characterName();
@@ -135,6 +138,12 @@ public class Controller {
 	}
 	public void saveGame(){
 		swingView.save();
+	}
+
+
+	public void getSavedGame(){
+		currentState = state.getSavedGames;
+		swingView.showSavedGames(loaderSaver.getSavedGameList(resourcesPath));
 	}
 
 	public void loadGame(){

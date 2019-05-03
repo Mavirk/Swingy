@@ -1,5 +1,7 @@
 package com.wethinkcode.swingy.view;
 
+import java.io.File;
+
 import com.wethinkcode.swingy.model.*;
 
 public interface View {
@@ -18,4 +20,5 @@ public interface View {
 	 void load();
 	 void save();
 	 void invalid(String input);
+	 void showSavedGames(File[] savedGames);
 }

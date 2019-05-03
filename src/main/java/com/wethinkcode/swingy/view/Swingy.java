@@ -2,6 +2,9 @@ package com.wethinkcode.swingy.view;
 
 import com.wethinkcode.swingy.controller.*;
 import com.wethinkcode.swingy.model.*;
+
+import java.io.File;
+
 import javax.swing.JFrame;
 
 public class Swingy extends JFrame implements View{
@@ -220,6 +223,11 @@ public class Swingy extends JFrame implements View{
 	@Override
 	public void save(){
 		printLine("Game Saved");
+	}
+
+	@Override
+	public void showSavedGames(File[] savedGames) {
+		printLine("TODO print saved games");
 	}
 	@Override
 	public void load(){

@@ -1,6 +1,7 @@
 package com.wethinkcode.swingy.controller;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -27,6 +28,10 @@ public class GameLoader {
         }
         String[] data = lines.toArray(new String[]{});
         return data;
+    }
+    public void getSavedGameList(String pathToSavedGames){
+        File folder = new File(pathToSavedGames);
+        File[] listOfFiles = folder.listFiles();
     }
     public void loadGame(){}
     public void saveGame(){}

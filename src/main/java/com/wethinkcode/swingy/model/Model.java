@@ -11,9 +11,6 @@ public class Model {
     public Hero hero;
     public World world;
 
-    public Model(){
-    }
-
     public void saveGame(){
         System.out.println("this is the model.saveGame() function");
 

@@ -1,4 +1,7 @@
 package com.wethinkcode.swingy.view;
+
+import java.io.File;
+
 import com.wethinkcode.swingy.controller.Controller;
 import com.wethinkcode.swingy.model.*;
 
@@ -117,6 +120,10 @@ public class Console implements View {
 	@Override
 	public void save(){
 		System.out.print("Game Saved");
+	}
+	@Override
+	public void showSavedGames(File[] savedGames) {
+		
 	}
 	@Override
 	public void load(){
