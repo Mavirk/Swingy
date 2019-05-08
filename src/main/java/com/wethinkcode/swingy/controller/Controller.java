@@ -43,6 +43,7 @@ public class Controller {
 			swingView = new Swingy(this);
 			console = false;
 		}
+		loaderSaver = new LoaderSaver();
 	}
 
 	public void swingyClicked(String input) {
@@ -137,6 +138,7 @@ public class Controller {
 		characterName();
 	}
 	public void saveGame(){
+		loaderSaver.saveGame(model);
 		swingView.save();
 	}
 

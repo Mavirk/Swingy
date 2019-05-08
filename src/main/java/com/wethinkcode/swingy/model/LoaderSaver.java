@@ -3,7 +3,11 @@ package com.wethinkcode.swingy.model;
 import com.wethinkcode.swingy.model.Model;
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.IOException;
+import java.io.ObjectOutput;
+import java.io.ObjectOutputStream;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,11 +17,25 @@ public class LoaderSaver {
         System.out.println(gameString.split("/")[0]);
         System.out.println("/");
         System.out.println(gameString.split("/")[1]);
-        fileReader(gameString);
     }
 
     public void saveGame(Model model) {
-        fileWriter(model.hero.getName() + "/" + model.hero.getClass(), model);
+        String gameName = model.hero.getName() + "-" + model.hero.getOccupation();
+        gameName = gameName.replace("/", "");
+        String filePath = "resources/saved/" + gameName + ".ser";
+        System.out.println("Saving game to file: " + filePath);
+        try {
+            File gameFile = new File(filePath);
+            gameFile.createNewFile();
+            FileOutputStream fileOut = new FileOutputStream(filePath, false);
+            ObjectOutput out = new ObjectOutputStream(fileOut);
+            out.writeObject(model);
+            out.close();
+            fileOut.close();
+            System.out.printf("Game is saved in: " + filePath);
+         } catch (IOException i) {
+            i.printStackTrace();
+         }
     }
 
     private String[] fileReader(String gameString) {

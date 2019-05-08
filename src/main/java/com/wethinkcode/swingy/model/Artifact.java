@@ -1,6 +1,9 @@
 package com.wethinkcode.swingy.model;
 
-public class Artifact {
+import java.io.Serializable;
+
+public class Artifact implements Serializable{
+    private static final long serialVersionUID = 1L;
     public String name;
     public String type;
     public int damage = 10;

@@ -1,10 +1,12 @@
 package com.wethinkcode.swingy.model;
 
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class World {
+public class World implements Serializable{
+    private static final long serialVersionUID = 1L;
     public Tile[][] coordinates;
     public List<Tile> tiles = new ArrayList<>();
     public int size;

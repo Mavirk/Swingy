@@ -1,7 +1,9 @@
 package com.wethinkcode.swingy.model;
 
+import java.io.Serializable;
 
-public class Hero {
+public class Hero implements Serializable{
+    private static final long serialVersionUID = 1L;
     private String name;
     private String occupation;
     private int xp;

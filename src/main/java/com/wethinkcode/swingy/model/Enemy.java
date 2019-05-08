@@ -1,8 +1,10 @@
 package com.wethinkcode.swingy.model;
 
+import java.io.Serializable;
 import java.util.Random;
 
-public class Enemy {
+public class Enemy implements Serializable{
+    private static final long serialVersionUID = 1L;
     public Random rand = new Random();
     private String name;
     private int hp;

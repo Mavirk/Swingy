@@ -7,7 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class Model {
+public class Model implements Serializable{
+    private static final long serialVersionUID = 1L;
     public Hero hero;
     public World world;
 

@@ -1,8 +1,10 @@
 package com.wethinkcode.swingy.model;
 
+import java.io.Serializable;
 import java.util.Random;
 
-public class Tile {
+public class Tile implements Serializable{
+    private static final long serialVersionUID = 1L;
     private Random rand = new Random();
     private int x;
     private int y;
