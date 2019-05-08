@@ -6,6 +6,7 @@ import com.wethinkcode.swingy.model.*;
 
 public interface View {
 	 void printLine(String line);
+	 void printSpacer();
 	 void printMap(int playerX, int playerY, int size);
 	 void main();
 	 void navigation();

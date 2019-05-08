@@ -11,10 +11,17 @@ public class Console implements View {
 	public Console(Controller controller){
 		this.controller = controller;
 	}
+
 	@Override
 	public void printLine(String message){
 		System.out.println(message);
 	}
+
+	@Override
+	public void printSpacer() {
+		printLine("-----------------------");
+	}
+
 	@Override
 	public void main() {
 		printLine("mainMenu");
@@ -90,7 +97,7 @@ public class Console implements View {
 		else if(h.getHp() <= 0){
 			printLine(h.getName()+" has died");
 		}
-//	print HEALTH AT`ACK DEF
+//	print HEALTH ATTACK DEF
 	}
 	
 	@Override
@@ -123,11 +130,15 @@ public class Console implements View {
 	}
 	@Override
 	public void showSavedGames(File[] savedGames) {
-		
+		printSpacer();;
+		printLine("SAVED GAMES:");
+		for (File f : savedGames){
+			printLine(f.getName());
+		}
 	}
 	@Override
 	public void load(){
-		System.out.print("loadGame");
+		printLine("loadGame");
 	}
 	@Override
 	public void invalid(String input){

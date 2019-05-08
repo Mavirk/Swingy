@@ -18,6 +18,7 @@ public class Swingy extends JFrame implements View{
 		this.controller = controller;
 		initComponents();
 	}
+
 	@SuppressWarnings("unchecked")
         // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
         private void initComponents() {
@@ -118,6 +119,12 @@ public class Swingy extends JFrame implements View{
 	public void printLine(String line){
 		outputTextArea.append(line + "\n");
 	}
+
+	@Override
+	public void printSpacer() {
+		
+	}
+
 	@Override	
 	public void main(){
 		this.setVisible(true);
@@ -125,6 +132,7 @@ public class Swingy extends JFrame implements View{
 		printLine("new");
 		printLine("load");
 	}
+
 	@Override
 	public void printMap(int playerX, int playerY, int size){
 		String ANSI_RED = "\u001B[31m";
@@ -157,6 +165,7 @@ public class Swingy extends JFrame implements View{
 	public void characterName(){
 		printLine("Whats your name ?");
 	}
+
 	@Override	
 	public void characterCreation() {
 		printLine("What is your class");
@@ -220,6 +229,7 @@ public class Swingy extends JFrame implements View{
 		printLine("menu");
 		printLine("exit");
 	}
+
 	@Override
 	public void save(){
 		printLine("Game Saved");
@@ -229,14 +239,17 @@ public class Swingy extends JFrame implements View{
 	public void showSavedGames(File[] savedGames) {
 		printLine("TODO print saved games");
 	}
+
 	@Override
 	public void load(){
 		printLine("loadGame");
 	}
+
 	@Override	
 	public void invalid(String input){
 		printErrorLable("'" + input + "' <-you cant say that Sir they wont know what you mean");
 	}
+	
 	private void printErrorLable(String input){
 		errorLable.setText(input);
 	}

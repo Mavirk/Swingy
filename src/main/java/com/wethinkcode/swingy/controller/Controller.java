@@ -7,11 +7,13 @@ import java.util.Scanner;
 
 public class Controller {
 	public enum state{
+		startGame,
 		main,
 		newGame,
 		saveGame,
 		loadGame,
 		getSavedGames,
+		loadGameMenu,
 		characterName,
 		characterCreation,
 		navigation,
@@ -24,10 +26,12 @@ public class Controller {
 		loot,
 		invalid
 	}
-	public String resourcesPath = "../../resources/saved/";
+	
+	public String resourcesPath = "resources/saved/";
 	public String input = null;
 	private String playerName;
-	public state currentState = state.main;
+	public state currentState = state.startGame;
+	public state prevState = null;
 	public Model model = new Model();
 	public View swingView;
 	public LoaderSaver loaderSaver;
@@ -61,16 +65,26 @@ public class Controller {
 	}
 
 	public void switchStates(){
-		swingView.printLine("current input: " + input);
+		// swingView.printLine("current input: " + input);
+		// swingView.printLine("current state: " + currentState);
+		prevState = currentState;
 		switch(currentState){
+			case startGame:
+				mainMenu();
+				break;
 			case main:
 				if(input.equals("new"))newGame();
-				else if(input.equals("load"))getSavedGame();
+				else if(input.equals("load"))loadGameMenu();
 				break;
 			case newGame:
 				characterName();
+				break;
 			case loadGame:
 				navigationMenu();
+				break;
+			case loadGameMenu:
+				if(checkGameString(input)) loadGame();
+				break;
 			case characterName:
 				playerName = input;
 				characterCreationMenu();
@@ -88,7 +102,6 @@ public class Controller {
 			case fightMenu:
 				if (input.equals("fight")) fight();
 				else if (input.equals("run")) run();
-				fightOutcome();
 				break;
 			case lootMenu:
 				if(input.equals("take")) {
@@ -96,10 +109,11 @@ public class Controller {
 						model.hero.putArtifact(model.hero.getCurrentTile().getEnemy().artifact);
 						System.out.println("I have a new " + model.hero.getItemArtifact(model.hero.getCurrentTile().getEnemy().artifact.type).name);
 					}else System.out.println("there is nothiung even though there should be something");
+					navigationMenu();
 				}else if(input.equals("leave"));
-				else swingView.invalid(input);
 				break;
 			case battle:
+				fightOutcome();
 				break;
 			case fightOutcome:
 				if (model.hero.getCurrentTile().getEnemy().getHp() <= 0){
@@ -119,9 +133,16 @@ public class Controller {
 				break;
 			case invalid:
 				break;
+			default:
+				swingView.printLine("Invalid Input");
+				break;
 		}
+		invalidInput();
 	}
 
+	public void startGame(){
+		switchStates();
+	}
 	public void mainMenu() {
 		currentState = state.main;
 		swingView.main();
@@ -129,7 +150,7 @@ public class Controller {
 	}
 
 	public void continueGame(){
-		
+		loadGame();
 	}
 
 	public void newGame(){
@@ -142,16 +163,18 @@ public class Controller {
 		swingView.save();
 	}
 
-
-	public void getSavedGame(){
-		currentState = state.getSavedGames;
-		swingView.showSavedGames(loaderSaver.getSavedGameList(resourcesPath));
-	}
-
 	public void loadGame(){
 		currentState = state.loadGame;
 		swingView.load();
+	}
+
+	public void loadGameMenu(){
+		currentState = state.loadGameMenu;
+		swingView.showSavedGames(loaderSaver.getSavedGameList(resourcesPath));
 		getConsoleInput();
+	}
+	private boolean checkGameString(String gameString){
+		return true;
 	}
 
 	public void characterName() {
@@ -190,7 +213,6 @@ public class Controller {
 		else {
 			swingView.printLine("No loot found in the corpse");
 		}
-		navigationMenu();
 	}
 
 	public void deathMenu() {
@@ -211,15 +233,24 @@ public class Controller {
 		System.exit(0);
 	}
 	public void fight() {
+		currentState = state.battle;
 		model.hero.attackEnemy(model.hero.getCurrentTile().getEnemy());
 		swingView.battle(model.hero, model.hero.getCurrentTile().getEnemy());
+		switchStates();
 	}
 
 	public void fightOutcome(){
 		currentState = state.fightOutcome;
 		swingView.fightOutcome(model.hero, model.hero.getCurrentTile().getEnemy());
-		if (model.hero.getHp() <= 0) swingView.death();
-		getConsoleInput();
+		if (model.hero.getHp() <= 0) characterDeath();
+		else if(model.hero.getCurrentTile().getEnemy().getHp() > 0) fightMenu();
+		else switchStates();
+	}
+
+	public void characterDeath(){
+		currentState = state.death;
+		swingView.death();
+		return;
 	}
 
 	public void run(){
@@ -243,11 +274,17 @@ public class Controller {
 				model.hero = new Hero(name, occupation, 0, 1, 1000, 1000, 1000, model.world);
 				break;
 			default:
-				swingView.invalid(input);
+				invalidInput();
 		}
 	}
 	public void doNothing(){
 		assert true;
+	}
+
+	public void invalidInput(){
+		swingView.printLine("Invalid Input :" + "'" + input + "'");
+		currentState = prevState;
+		getConsoleInput();
 	}
 
 }
