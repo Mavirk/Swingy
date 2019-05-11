@@ -1,13 +1,12 @@
 package com.wethinkcode.swingy.model;
 
-import com.wethinkcode.swingy.model.Model;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutput;
 import java.io.ObjectOutputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
 
 public class LoaderSaver {
     public Model loadGame(String gameString){
@@ -29,7 +28,7 @@ public class LoaderSaver {
         return model;
     }
 
-    public void saveGame(Model model) {
+    public String saveGame(Model model) {
         String gameName = model.hero.getName() + "-" + model.hero.getOccupation();
         gameName = gameName.replace("/", "");
         String filePath = "resources/saved/" + gameName + ".ser";
@@ -46,6 +45,7 @@ public class LoaderSaver {
          } catch (IOException i) {
             i.printStackTrace();
          }
+         return filePath;
     }
 
     public File[] getSavedGameList(String pathToSavedGames){

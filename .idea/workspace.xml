@@ -1,81 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/main/java/com/wethinkcode/swingy/controller/GameLoader.java" line="31" mnemonic="9" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f87228d-d1d7-4443-b9db-028c50e36563" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Swingy.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Swingy/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Swingy/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Swingy/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Swingy/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Swingy/Swingy.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Swingy/author.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Swingy/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Swingy/src/main/com/wethinkcode/swingy/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Swingy/src/main/com/wethinkcode/swingy/controller/Controller$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Swingy/src/main/com/wethinkcode/swingy/controller/Controller$state.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Swingy/src/main/com/wethinkcode/swingy/controller/Controller.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Swingy/src/main/com/wethinkcode/swingy/controller/Reader.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Swingy/src/main/com/wethinkcode/swingy/model/Artifact.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Swingy/src/main/com/wethinkcode/swingy/model/Enemy.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Swingy/src/main/com/wethinkcode/swingy/model/Hero.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Swingy/src/main/com/wethinkcode/swingy/model/Model.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Swingy/src/main/com/wethinkcode/swingy/model/Tile.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Swingy/src/main/com/wethinkcode/swingy/model/World.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Swingy/src/main/com/wethinkcode/swingy/view/Console.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Swingy/src/main/com/wethinkcode/swingy/view/Swingy$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Swingy/src/main/com/wethinkcode/swingy/view/Swingy.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Swingy/src/main/com/wethinkcode/swingy/view/View.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Swingy/src/resources/armour.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Swingy/src/resources/characterCreation.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Swingy/src/resources/helm.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Swingy/src/resources/introduction.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Swingy/src/resources/mainMenu.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Swingy/src/resources/navigation.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Swingy/src/resources/saved/map.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Swingy/src/resources/saved/robert.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Swingy/src/resources/script/artifact/armour.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Swingy/src/resources/script/artifact/helm.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Swingy/src/resources/script/artifact/weapons.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Swingy/src/resources/script/character/enemy/blackKnight.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Swingy/src/resources/script/character/enemy/chimera.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Swingy/src/resources/script/character/enemy/hellHound.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Swingy/src/resources/script/character/hero/archer.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Swingy/src/resources/script/character/hero/knight.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Swingy/src/resources/script/character/hero/paladin.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Swingy/src/resources/script/character/hero/wizard.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Swingy/src/resources/script/characters/archer.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Swingy/src/resources/script/characters/knight.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Swingy/src/resources/script/characters/paladin.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Swingy/src/resources/script/characters/wizard.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Swingy/src/resources/script/encounters/blackKnight.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Swingy/src/resources/script/encounters/chimera.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Swingy/src/resources/script/encounters/hellHound.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Swingy/src/resources/script/ui/characterCreation.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Swingy/src/resources/script/ui/introduction.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Swingy/src/resources/script/ui/mainMenu.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Swingy/src/resources/script/ui/navigation.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Swingy/src/resources/weapons.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/com/wethinkcode/swingy/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wethinkcode/swingy/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/com/wethinkcode/swingy/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wethinkcode/swingy/controller/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/com/wethinkcode/swingy/controller/Reader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wethinkcode/swingy/controller/GameLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/com/wethinkcode/swingy/model/Artifact.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wethinkcode/swingy/model/Artifact.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/com/wethinkcode/swingy/model/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wethinkcode/swingy/model/Enemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/com/wethinkcode/swingy/model/Hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wethinkcode/swingy/model/Hero.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/com/wethinkcode/swingy/model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wethinkcode/swingy/model/Model.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/com/wethinkcode/swingy/model/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wethinkcode/swingy/model/Tile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/com/wethinkcode/swingy/model/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wethinkcode/swingy/model/World.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/com/wethinkcode/swingy/view/Console.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wethinkcode/swingy/view/Console.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/com/wethinkcode/swingy/view/Swingy.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wethinkcode/swingy/view/Swingy.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/com/wethinkcode/swingy/view/Swingy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wethinkcode/swingy/view/Swingy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/com/wethinkcode/swingy/view/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wethinkcode/swingy/view/View.java" afterDir="false" />
+    <list default="true" id="3424e06f-dc61-4ba1-81c3-2a9ccd2dcdf9" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wethinkcode/swingy/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wethinkcode/swingy/controller/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wethinkcode/swingy/model/LoaderSaver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wethinkcode/swingy/model/LoaderSaver.java" afterDir="false" />
     </list>
-    <ignored path="$PROJECT_DIR$/target/" />
+    <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,176 +17,30 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FUSProjectUsageTrigger">
-    <session id="-286210012">
+    <session id="-482430984">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.open.time.3" value="1" />
+          <entry key="project.open.time.16" value="1" />
           <entry key="project.opened" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="14" />
+          <entry key="Local (1)" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="14" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="java" value="199" />
-          <entry key="txt" value="23" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="JAVA" value="199" />
-          <entry key="PLAIN_TEXT" value="23" />
+          <entry key="Terminal Session" value="2" />
         </counts>
       </usages-collector>
     </session>
   </component>
-  <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/wethinkcode/swingy/view/Console.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="609">
-              <caret line="121" column="21" selection-start-line="121" selection-start-column="21" selection-end-line="121" selection-end-column="21" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/wethinkcode/swingy/view/View.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/wethinkcode/swingy/view/Swingy.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1088">
-              <caret line="146" column="19" selection-start-line="146" selection-start-column="19" selection-end-line="146" selection-end-column="19" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/wethinkcode/swingy/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/wethinkcode/swingy/controller/Controller.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1605">
-              <caret line="107" column="37" selection-start-line="107" selection-start-column="37" selection-end-line="107" selection-end-column="37" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2972#2973#0" expanded="true" />
-                <element signature="e#2995#2996#0" expanded="true" />
-                <element signature="e#4348#4349#0" expanded="true" />
-                <element signature="e#4369#4370#0" expanded="true" />
-                <element signature="e#5460#5461#0" expanded="true" />
-                <element signature="e#5478#5479#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/wethinkcode/swingy/controller/GameLoader.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="31" column="25" selection-start-line="31" selection-start-column="25" selection-end-line="31" selection-end-column="25" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/wethinkcode/swingy/model/Hero.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/wethinkcode/swingy/model/World.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="7" lean-forward="true" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/wethinkcode/swingy/model/Model.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="116">
-              <caret line="9" column="19" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/wethinkcode/swingy/model/Tile.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="39" lean-forward="true" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="39" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+  <component name="FavoritesManager">
+    <favorites_list name="swingy" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/wethinkcode/swingy/model/Artifact.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/wethinkcode/swingy/model/Enemy.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/wethinkcode/swingy/model/Hero.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/wethinkcode/swingy/model/Tile.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/wethinkcode/swingy/model/World.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/wethinkcode/swingy/view/Console.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/wethinkcode/swingy/view/View.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/wethinkcode/swingy/Main.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/wethinkcode/swingy/controller/Controller.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/wethinkcode/swingy/view/Swingy.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/wethinkcode/swingy/controller/Reader.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/wethinkcode/swingy/controller/GameLoader.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/wethinkcode/swingy/model/Model.java" />
-      </list>
-    </option>
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
@@ -260,7 +48,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" fullScreen="true">
     <option name="width" value="2560" />
     <option name="height" value="1440" />
   </component>
@@ -270,43 +58,29 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="swingy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="swingy" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="swingy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="swingy" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="swingy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="swingy" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="swingy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="swingy" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="swingy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="swingy" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="swingy" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="swingy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="swingy" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="swingy" type="462c0819:PsiDirectoryNode" />
@@ -314,8 +88,6 @@
             </path>
             <path>
               <item name="swingy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="swingy" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="swingy" type="462c0819:PsiDirectoryNode" />
@@ -323,8 +95,6 @@
             </path>
             <path>
               <item name="swingy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="swingy" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="swingy" type="462c0819:PsiDirectoryNode" />
@@ -334,21 +104,12 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548509566381" />
-    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
-    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="SDKs" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -362,302 +123,59 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.console">
-    <configuration name="console" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="com.wethinkcode.swingy.Main" />
-      <module name="swingy" />
-      <option name="PROGRAM_PARAMETERS" value="console" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="src.main.com.wethinkcode.swingy.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="swingy" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="com.wethinkcode.swingy.Main" />
-      <module name="swingy" />
-      <option name="PROGRAM_PARAMETERS" value="swingy" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="src.main.com.wethinkcode.swingy.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="build" type="MavenRunConfiguration" factoryName="Maven">
-      <MavenSettings>
-        <option name="myGeneralSettings" />
-        <option name="myRunnerSettings" />
-        <option name="myRunnerParameters">
-          <MavenRunnerParameters>
-            <option name="profiles">
-              <set />
-            </option>
-            <option name="goals">
-              <list>
-                <option value="clean" />
-                <option value="package" />
-              </list>
-            </option>
-            <option name="pomFileName" />
-            <option name="profilesMap">
-              <map />
-            </option>
-            <option name="resolveToWorkspace" value="false" />
-            <option name="workingDirPath" value="$PROJECT_DIR$" />
-          </MavenRunnerParameters>
-        </option>
-      </MavenSettings>
-      <method v="2" />
-    </configuration>
-    <list>
-      <item itemvalue="Application.swingy" />
-      <item itemvalue="Application.console" />
-      <item itemvalue="Maven.build" />
-    </list>
-  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="4f87228d-d1d7-4443-b9db-028c50e36563" name="Default Changelist" comment="" />
-      <created>1548506923804</created>
+      <changelist id="3424e06f-dc61-4ba1-81c3-2a9ccd2dcdf9" name="Default Changelist" comment="" />
+      <created>1557582653754</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1548506923804</updated>
-      <workItem from="1548506925194" duration="1860000" />
+      <updated>1557582653754</updated>
+      <workItem from="1557582665197" duration="634000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1860000" />
+    <option name="totallyTimeSpent" value="634000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="2560" height="1361" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="0" width="2560" height="1440" extended-state="0" />
     <layout>
       <window_info id="Image Layers" />
       <window_info id="Designer" />
       <window_info id="UI Designer" />
       <window_info id="Capture Tool" />
-      <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24980143" />
+      <window_info id="Favorites" sideWeight="0.50101215" side_tool="true" weight="0.13463067" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49898785" visible="true" weight="0.13463067" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Messages" />
-      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32939324" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Palette" />
-      <window_info anchor="right" id="Theme Preview" />
-      <window_info anchor="right" id="Bean Validation" />
-      <window_info anchor="right" id="Capture Analysis" />
-      <window_info anchor="right" id="Palette&#9;" />
-      <window_info anchor="right" id="Database" />
-      <window_info anchor="right" id="Maven Projects" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-    </layout>
-    <layout-to-restore>
-      <window_info id="Image Layers" order="0" />
-      <window_info id="Designer" order="1" />
-      <window_info id="UI Designer" order="2" />
-      <window_info id="Capture Tool" order="3" />
-      <window_info id="Favorites" order="4" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.24980143" />
-      <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="0" />
-      <window_info anchor="bottom" id="Database Changes" order="1" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="2" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="3" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="4" />
-      <window_info anchor="bottom" id="Message" order="5" />
-      <window_info anchor="bottom" id="Find" order="6" />
-      <window_info active="true" anchor="bottom" id="Run" order="7" visible="true" weight="0.32939324" />
-      <window_info anchor="bottom" id="Debug" order="8" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="11" />
+      <window_info anchor="bottom" id="Database Changes" order="0" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="1" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" weight="0.329927" />
+      <window_info anchor="bottom" id="Message" order="3" />
+      <window_info anchor="bottom" id="Find" order="4" />
+      <window_info anchor="bottom" id="Run" order="5" />
+      <window_info anchor="bottom" id="Debug" order="6" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="7" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="8" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="9" />
       <window_info anchor="right" id="Palette" order="0" />
-      <window_info anchor="right" id="Capture Analysis" order="1" />
-      <window_info anchor="right" id="Database" order="2" />
-      <window_info anchor="right" id="Theme Preview" order="3" />
-      <window_info anchor="right" id="Bean Validation" order="4" />
-      <window_info anchor="right" id="Palette&#9;" order="5" />
-      <window_info anchor="right" id="Maven Projects" order="6" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="7" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="8" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="9" weight="0.25" />
-    </layout-to-restore>
+      <window_info anchor="right" id="Theme Preview" order="1" />
+      <window_info anchor="right" id="Capture Analysis" order="2" />
+      <window_info anchor="right" id="Palette&#9;" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="right" id="Maven Projects" order="5" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="6" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="7" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="8" weight="0.25" />
+      <window_info anchor="right" auto_hide="true" id="Terminal" order="9" weight="0.21167593" />
+    </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/wethinkcode/swingy/model/Artifact.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="8" selection-start-column="8" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/wethinkcode/swingy/model/Enemy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="8" selection-start-column="8" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/wethinkcode/swingy/model/Tile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="39" lean-forward="true" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/wethinkcode/swingy/model/Hero.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/wethinkcode/swingy/model/World.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="7" lean-forward="true" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/wethinkcode/swingy/view/View.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/wethinkcode/swingy/view/Console.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="609">
-          <caret line="121" column="21" selection-start-line="121" selection-start-column="21" selection-end-line="121" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/wethinkcode/swingy/view/Swingy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1088">
-          <caret line="146" column="19" selection-start-line="146" selection-start-column="19" selection-end-line="146" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/wethinkcode/swingy/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/wethinkcode/swingy/controller/Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1605">
-          <caret line="107" column="37" selection-start-line="107" selection-start-column="37" selection-end-line="107" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2972#2973#0" expanded="true" />
-            <element signature="e#2995#2996#0" expanded="true" />
-            <element signature="e#4348#4349#0" expanded="true" />
-            <element signature="e#4369#4370#0" expanded="true" />
-            <element signature="e#5460#5461#0" expanded="true" />
-            <element signature="e#5478#5479#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/wethinkcode/swingy/controller/GameLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="31" column="25" selection-start-line="31" selection-start-column="25" selection-end-line="31" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/wethinkcode/swingy/model/Model.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="9" column="19" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-  </component>
-  <component name="masterDetails">
-    <states>
-      <state key="GlobalLibrariesConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="JdkListConfigurable.UI">
-        <settings>
-          <last-edited>1.8</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectLibrariesConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
   </component>
 </project>
