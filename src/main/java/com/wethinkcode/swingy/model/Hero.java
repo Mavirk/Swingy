@@ -45,7 +45,7 @@ public class Hero implements Serializable{
         if (hp > 0 && enemy.getHp() <= 0){
             xp = xp + enemy.getXp();
         }
-        System.out.println("TEST");
+        // System.out.println("TEST");
     }
     public void runAway(){
         xCoor = oldX;
@@ -91,7 +91,7 @@ public class Hero implements Serializable{
         }
     }
     public void lookTile(Tile tile){
-        System.out.println("you looked at the tile");
+        // System.out.println("you looked at the tile");
     }
 
     public void levelUp(){
@@ -180,5 +180,8 @@ public class Hero implements Serializable{
     }
     public void setY(int y){
         yCoor = y;
+    }
+    public void setWorld(World world){
+        this.world = world;
     }
 }

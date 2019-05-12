@@ -17,16 +17,13 @@ public class World implements Serializable{
         size = area;
         playerX = (size - 1) / 2;
         playerY = (size - 1) / 2;
-        System.out.println(playerX + ", " + playerY);
         coordinates = new Tile[size][size];
         for(int x = 0 ; x < size; x++){
             for(int y = 0 ; y < size; y++){
                 coordinates[x][y] = new Tile(x, y, size);
                 tiles.add(coordinates[x][y]);
-                System.out.println("test 1");
             }
         }
-        System.out.println("world constructer completed");
     }
 
 

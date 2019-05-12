@@ -43,9 +43,12 @@ public class Model implements Serializable{
     }
 
     public World generateWorld(int lvl) {
-        int s = (((lvl - 1) * 5) + 10) - (lvl % 2);
-        System.out.println("size = "+s);
-        world = new World(s);
+        int oddCounter = 1;
+        System.out.println("lvl ::::::" + lvl);
+        for (int i = 0; i <= lvl ; i++){
+            oddCounter = oddCounter + 2;            
+        }
+        world = new World(oddCounter);
         return world;
     }
 

@@ -41,11 +41,12 @@ public class LoaderSaver {
             out.writeObject(model);
             out.close();
             fileOut.close();
-            System.out.printf("Game is saved in: " + filePath);
-         } catch (IOException i) {
+        } catch (IOException i) {
             i.printStackTrace();
-         }
-         return filePath;
+        }
+        System.out.printf("Game is saved in: " + filePath);
+        gameName = gameName + ".ser";
+        return gameName;
     }
 
     public File[] getSavedGameList(String pathToSavedGames){

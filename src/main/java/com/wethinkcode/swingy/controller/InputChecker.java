@@ -7,6 +7,9 @@ class InputChecker {
     LoaderSaver loaderSaver;
     public String resourcesPath = "resources/saved/";
 
+    public InputChecker(){
+        loaderSaver =  new LoaderSaver();
+    }
     public boolean checkLoadInput(String gameString) {
         String tempString = "";
         File[] savedGames = loaderSaver.getSavedGameList(resourcesPath);

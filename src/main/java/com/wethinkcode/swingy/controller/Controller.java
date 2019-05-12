@@ -33,6 +33,7 @@ public class Controller {
 			console = false;
 		}
 		loaderSaver = new LoaderSaver();
+		inputChecker = new InputChecker();
 	}
 
 	public void swingyClicked(String input) {
@@ -176,13 +177,19 @@ public class Controller {
 
 	public void saveGame() {
 		currentGame = loaderSaver.saveGame(model);
+		print(currentGame);
 		swingView.save();
 	}
 
 	public void loadGame(String gameName) {
 		currentState = state.loadGame;
-		model = loaderSaver.loadGame(resourcesPath + gameName);
+		model = loaderSaver.loadGame(resourcesPath + gameName );
+		model.world = model.generateWorld(model.hero.getLevel());
+		model.hero.setX(model.world.playerX);
+		model.hero.setY(model.world.playerY);
+		model.hero.setWorld(model.world);
 		swingView.load();
+		switchStates();
 	}
 
 	public void loadGameMenu() {
@@ -210,6 +217,7 @@ public class Controller {
 		swingView.navigation();
 		getConsoleInput();
 	}
+	
 
 	public void fightMenu() {
 		currentState = state.fightMenu;
@@ -278,16 +286,16 @@ public class Controller {
 	public void createCharacter(String name, String occupation) {
 		switch (occupation) {
 		case "archer":
-			model.hero = new Hero(name, occupation, 0, 1, 100, 10, 30, model.world);
+			model.hero = new Hero(name, occupation, 0, 0, 100, 10, 30, model.world);
 			break;
 		case "knight":
-			model.hero = new Hero(name, occupation, 0, 1, 100, 20, 20, model.world);
+			model.hero = new Hero(name, occupation, 0, 0, 100, 20, 20, model.world);
 			break;
 		case "paladin":
-			model.hero = new Hero(name, occupation, 0, 1, 200, 30, 10, model.world);
+			model.hero = new Hero(name, occupation, 0, 0, 200, 30, 10, model.world);
 			break;
 		case "wizard":
-			model.hero = new Hero(name, occupation, 0, 1, 1000, 1000, 1000, model.world);
+			model.hero = new Hero(name, occupation, 0, 0, 1000, 1000, 1000, model.world);
 			break;
 		default:
 			invalidInput();

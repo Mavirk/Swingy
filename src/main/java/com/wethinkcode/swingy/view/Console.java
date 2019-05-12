@@ -39,9 +39,9 @@ public class Console implements View {
 		for (int j = size - 1; j >= 0; j--) {
 			for (int i = 0; i < size; i++) {
 				if (i == playerX && j == playerY) {
-					System.out.print(ANSI_RED + "|" + i + "," + j + "|" + ANSI_RESET);
+					System.out.print(ANSI_RED + "|.|"+ ANSI_RESET);
 				} else {
-					System.out.print("|" + i + "," + j + "|");
+					System.out.print("|.|");
 					// System.out.print(coordinates[i][j].getSymbol());
 				}
 			}
