@@ -7,12 +7,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class Model {
+public class Model implements Serializable{
+    private static final long serialVersionUID = 1L;
     public Hero hero;
     public World world;
-
-    public Model(){
-    }
 
     public void saveGame(){
         System.out.println("this is the model.saveGame() function");
@@ -45,9 +43,12 @@ public class Model {
     }
 
     public World generateWorld(int lvl) {
-        int s = (((lvl - 1) * 5) + 10) - (lvl % 2);
-        System.out.println("size = "+s);
-        world = new World(s);
+        int oddCounter = 1;
+        System.out.println("lvl ::::::" + lvl);
+        for (int i = 0; i <= lvl ; i++){
+            oddCounter = oddCounter + 2;            
+        }
+        world = new World(oddCounter);
         return world;
     }
 

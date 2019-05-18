@@ -1,44 +1,57 @@
 package com.wethinkcode.swingy.model;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutput;
+import java.io.ObjectOutputStream;
 
 public class LoaderSaver {
-    public void loadGame(String gameString){
-        System.out.println("Loading game : ");
-        System.out.println(gameString.split("/")[0]);
-        System.out.println("/");
-        System.out.println(gameString.split("/")[1]);
-        fileReader(gameString)
-    }
-
-    public void saveGame(Model model) {
-        fileWriter(model.hero.getName() + "/" + model.hero.getClass(), model);
-    }
-
-    private String[] fileReader(String gameString) {
-        String filename = gameString + ".txt";
-        String line;
-        List<String> lines = new ArrayList<String>();
-        BufferedReader abc;
+    public Model loadGame(String gameString){
+        Model model = null;
         try {
-            abc = new BufferedReader(new FileReader(filename));
-            while ((line = abc.readLine()) != null) {
-                lines.add(line);
-            }
-        } catch (FileNotFoundException fnf | IOException e) {
-            e.printStackTrace();
+           FileInputStream fileIn = new FileInputStream(gameString);
+           ObjectInputStream in = new ObjectInputStream(fileIn);
+           model = (Model) in.readObject();
+           in.close();
+           fileIn.close();
+        } catch (IOException i) {
+           i.printStackTrace();
+           return model;
+        } catch (ClassNotFoundException c) {
+           System.out.println("Model class not found");
+           c.printStackTrace();
+           return model;
         }
-            
-        abc.close();
-
-        // If you want to convert to a String[]
-        String[] data = lines.toArray(new String[]{});
-        return new String[0];
+        return model;
     }
-    private void fileWriter(String fileName ,Model model){}
+
+    public String saveGame(Model model) {
+        String gameName = model.hero.getName() + "-" + model.hero.getOccupation();
+        gameName = gameName.replace("/", "");
+        String filePath = "resources/saved/" + gameName + ".ser";
+        System.out.println("Saving game to file: " + filePath);
+        try {
+            File gameFile = new File(filePath);
+            gameFile.createNewFile();
+            FileOutputStream fileOut = new FileOutputStream(filePath, false);
+            ObjectOutput out = new ObjectOutputStream(fileOut);
+            out.writeObject(model);
+            out.close();
+            fileOut.close();
+        } catch (IOException i) {
+            i.printStackTrace();
+        }
+        System.out.printf("Game is saved in: " + filePath);
+        gameName = gameName + ".ser";
+        return gameName;
+    }
+
+    public File[] getSavedGameList(String pathToSavedGames){
+        File folder = new File(pathToSavedGames);
+        File[] listOfFiles = folder.listFiles();
+        return listOfFiles;
+    }
 }

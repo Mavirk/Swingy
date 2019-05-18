@@ -1,8 +1,10 @@
 package com.wethinkcode.swingy.model;
 
+import java.io.Serializable;
 import java.util.Random;
 
-public class Tile {
+public class Tile implements Serializable{
+    private static final long serialVersionUID = 1L;
     private Random rand = new Random();
     private int x;
     private int y;
@@ -13,11 +15,9 @@ public class Tile {
 
     public Tile(int xC, int yC, int size) {
         int mapRadius = size / 2;
-        System.out.println("test 1 in Tile constructer");
         int i = rand.nextInt(100);
-        System.out.println("test 2 in Tile constructer");
         danger = Math.abs(mapRadius - Math.max(xC, yC));
-        System.out.println("danger : " + danger);
+        // System.out.println("danger : " + danger);
         x = xC;
         y = yC;
         if(i < 50 && danger > 0) enemy = generateEnemy();
@@ -35,7 +35,7 @@ public class Tile {
         else if (danger >= 6 && danger < 9) name = "Chimera";
         else if (danger >= 9) name = "HellHound";
         enemy = new Enemy(name, hp, def, atk, xp);
-        System.out.println("enemy generated on : " + this.x + ", " + this.y);
+        // System.out.println("enemy generated on : " + this.x + ", " + this.y);
         return enemy;
     }
 

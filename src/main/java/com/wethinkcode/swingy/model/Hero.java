@@ -1,7 +1,9 @@
 package com.wethinkcode.swingy.model;
 
+import java.io.Serializable;
 
-public class Hero {
+public class Hero implements Serializable{
+    private static final long serialVersionUID = 1L;
     private String name;
     private String occupation;
     private int xp;
@@ -43,7 +45,7 @@ public class Hero {
         if (hp > 0 && enemy.getHp() <= 0){
             xp = xp + enemy.getXp();
         }
-        System.out.println("TEST");
+        // System.out.println("TEST");
     }
     public void runAway(){
         xCoor = oldX;
@@ -67,8 +69,8 @@ public class Hero {
                 break;
 
         }
-        System.out.print("Player Moved From: " + oldX + ", " + oldY);
-        System.out.println(" To: " + xCoor + ", " + yCoor);
+        // System.out.print("Player Moved From: " + oldX + ", " + oldY);
+        // System.out.println(" To: " + xCoor + ", " + yCoor);
         if (yCoor >= 0 && xCoor >= 0 && xCoor < world.size && yCoor < world.size){
             currentTile = world.getTile(xCoor, yCoor);
             return false;
@@ -89,7 +91,7 @@ public class Hero {
         }
     }
     public void lookTile(Tile tile){
-        System.out.println("you looked at the tile");
+        // System.out.println("you looked at the tile");
     }
 
     public void levelUp(){
@@ -178,5 +180,8 @@ public class Hero {
     }
     public void setY(int y){
         yCoor = y;
+    }
+    public void setWorld(World world){
+        this.world = world;
     }
 }
