@@ -21,7 +21,7 @@ class InputChecker {
         return false;
     }
 
-    public boolean checkNavigationInput1(String input) {
+    public boolean checkNavigationInput(String input) {
         switch (input) {
         case "north":
             break;

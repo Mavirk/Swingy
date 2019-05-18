@@ -69,8 +69,8 @@ public class Hero implements Serializable{
                 break;
 
         }
-        System.out.print("Player Moved From: " + oldX + ", " + oldY);
-        System.out.println(" To: " + xCoor + ", " + yCoor);
+        // System.out.print("Player Moved From: " + oldX + ", " + oldY);
+        // System.out.println(" To: " + xCoor + ", " + yCoor);
         if (yCoor >= 0 && xCoor >= 0 && xCoor < world.size && yCoor < world.size){
             currentTile = world.getTile(xCoor, yCoor);
             return false;

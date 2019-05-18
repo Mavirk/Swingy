@@ -19,6 +19,12 @@ public class Console implements View {
 	}
 
 	@Override
+	public void clear() {
+		System.out.print("\033[H\033[2J");
+		System.out.flush();	
+	}
+
+	@Override
 	public void printSpacer() {
 		printLine("-----------------------");
 	}
@@ -135,7 +141,6 @@ public class Console implements View {
 	@Override
 	public void showSavedGames(File[] savedGames) {
 		printSpacer();
-		;
 		printLine("SAVED GAMES:");
 		for (File f : savedGames) {
 			printLine(f.getName());

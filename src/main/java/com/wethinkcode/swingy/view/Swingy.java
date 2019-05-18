@@ -109,10 +109,17 @@ public class Swingy extends JFrame implements View{
 	private void swingyClicked() {
 		if (inputTextBox.getText().equals("")){errorLable.setText("input empty");}
 		try{input = inputTextBox.getText();}
-		catch(NullPointerException e){invalid(input);}
+		catch(NullPointerException e){
+			invalid(input);
+		}
+		controller.swingyClicked(input);
+	}
+
+	@Override
+	public void clear() {
 		outputTextArea.setText("");
 		inputTextBox.setText("");
-		controller.swingyClicked(input);
+
 	}
 
 	@Override

@@ -24,14 +24,16 @@ public class Controller {
 	public boolean exit = false;
 	public boolean buttonClicked = false;
 	public boolean console = true;
+	private boolean debug = false;
 
-	public Controller(String viewType) {
+	public Controller(String viewType, String runMode) {
 		if (viewType.equals("console"))
 			swingView = new Console(this);
 		else if (viewType.equals("swingy")) {
 			swingView = new Swingy(this);
 			console = false;
 		}
+		if (runMode.equals("-d")) debug = true;
 		loaderSaver = new LoaderSaver();
 		inputChecker = new InputChecker();
 	}
@@ -49,6 +51,7 @@ public class Controller {
 			while (!buttonClicked)
 				assert true;
 		buttonClicked = false;
+		// swingView.clear();
 		switchStates();
 	}
 
@@ -90,7 +93,7 @@ public class Controller {
 			navigationMenu();
 			break;
 		case navigation:
-			if (inputChecker.checkNavigationInput1(input)) {
+			if (inputChecker.checkNavigationInput(input)) {
 				exit = model.hero.moveDirection(input);
 				if (exit && model.hero.getHp() > 0)
 					win();
@@ -177,7 +180,7 @@ public class Controller {
 
 	public void saveGame() {
 		currentGame = loaderSaver.saveGame(model);
-		print(currentGame);
+		debugPrint(currentGame);
 		swingView.save();
 	}
 
@@ -200,19 +203,21 @@ public class Controller {
 
 	public void characterName() {
 		currentState = state.characterName;
+		swingView.clear();
 		swingView.characterName();
 		getConsoleInput();
 	}
 
 	public void characterCreationMenu() {
 		currentState = state.characterCreation;
+		swingView.clear();
 		swingView.characterCreation();
 		getConsoleInput();
 	}
 
 	public void navigationMenu() {
 		currentState = state.navigation;
-
+		swingView.clear();
 		swingView.printMap(model.hero.getX(), model.hero.getY(), model.world.size);
 		swingView.navigation();
 		getConsoleInput();
@@ -308,14 +313,18 @@ public class Controller {
 
 	public void invalidInput() {
 		swingView.printLine("Invalid Input :" + "'" + input + "'");
-		print("current state: " + currentState);
-		print("prev state: " + prevState);
+		debugPrint("current state: " + currentState);
+		debugPrint("prev state: " + prevState);
 		currentState = prevState;
 		getConsoleInput();
 	}
 
 	public void print(String error) {
 		System.out.println(error);
+	}
+
+	private void debugPrint(String debugMessage){
+		if (debug = true)System.out.println(debugMessage);
 	}
 
 }
