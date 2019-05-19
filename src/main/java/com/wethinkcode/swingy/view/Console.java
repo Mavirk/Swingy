@@ -142,9 +142,7 @@ public class Console implements View {
 	public void showSavedGames(File[] savedGames) {
 		printSpacer();
 		printLine("SAVED GAMES:");
-		for (File f : savedGames) {
-			printLine(f.getName());
-		}
+		for (File f : savedGames) printLine(f.getName());
 	}
 
 	@Override

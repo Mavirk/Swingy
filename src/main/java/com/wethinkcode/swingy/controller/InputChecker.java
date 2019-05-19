@@ -15,8 +15,7 @@ class InputChecker {
         File[] savedGames = loaderSaver.getSavedGameList(resourcesPath);
         for (File f : savedGames) {
             tempString = f.getName();
-            if (tempString.equals(gameString))
-                return true;
+            if (tempString.equals(gameString)) return true;
         }
         return false;
     }

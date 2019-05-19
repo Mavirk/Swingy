@@ -21,7 +21,7 @@ public class Enemy implements Serializable{
         def = d;
         atk = a;
         xp = x;
-        if (i < 100) generateLoot();
+        if (i < 30) generateLoot();
     }
 
     public void generateLoot() {

@@ -45,12 +45,14 @@ public class LoaderSaver {
             i.printStackTrace();
         }
         System.out.printf("Game is saved in: " + filePath);
+        System.out.println(filePath);
         gameName = gameName + ".ser";
         return gameName;
     }
 
     public File[] getSavedGameList(String pathToSavedGames){
         File folder = new File(pathToSavedGames);
+        if (!folder.exists()) return new File[]{};
         File[] listOfFiles = folder.listFiles();
         return listOfFiles;
     }

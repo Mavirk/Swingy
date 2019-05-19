@@ -1,8 +1,14 @@
 package com.wethinkcode.swingy.controller;
 
-import com.wethinkcode.swingy.model.*;
-import com.wethinkcode.swingy.view.*;
+import java.io.File;
 import java.util.Scanner;
+
+import com.wethinkcode.swingy.model.Hero;
+import com.wethinkcode.swingy.model.LoaderSaver;
+import com.wethinkcode.swingy.model.Model;
+import com.wethinkcode.swingy.view.Console;
+import com.wethinkcode.swingy.view.Swingy;
+import com.wethinkcode.swingy.view.View;
 
 public class Controller {
 	public enum state {
@@ -33,6 +39,7 @@ public class Controller {
 			swingView = new Swingy(this);
 			console = false;
 		}
+		debugPrint(runMode);
 		if (runMode.equals("-d")) debug = true;
 		loaderSaver = new LoaderSaver();
 		inputChecker = new InputChecker();
@@ -197,8 +204,16 @@ public class Controller {
 
 	public void loadGameMenu() {
 		currentState = state.loadGameMenu;
-		swingView.showSavedGames(loaderSaver.getSavedGameList(resourcesPath));
-		getConsoleInput();
+		File[] saved = loaderSaver.getSavedGameList(resourcesPath);
+		if (saved.length > 0){
+			swingView.showSavedGames(saved);
+			getConsoleInput();
+		}else {
+			swingView.clear();
+			swingView.printLine("No Saved Games");
+			swingView.printSpacer();
+			mainMenu();
+		}
 	}
 
 	public void characterName() {
@@ -226,6 +241,7 @@ public class Controller {
 
 	public void fightMenu() {
 		currentState = state.fightMenu;
+		swingView.clear();
 		swingView.fightMenu(model.hero, model.hero.getCurrentTile().getEnemy());
 		getConsoleInput();
 	}
@@ -324,7 +340,7 @@ public class Controller {
 	}
 
 	private void debugPrint(String debugMessage){
-		if (debug = true)System.out.println(debugMessage);
+		if (debug = true)System.out.println("DEBUG: " + debugMessage);
 	}
 
 }
