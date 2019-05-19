@@ -146,6 +146,18 @@ public class Console implements View {
 	}
 
 	@Override
+	public void printGameStats(Model game) {
+		printSpacer();
+		printLine("Hero: " + game.hero.getName());
+		printLine("Class: " + game.hero.getOccupation());	
+		printLine("Level: " + game.hero.getLevel());	
+		printLine("Experience: " + game.hero.getXp());	
+		printLine("Attack: " + game.hero.getAtk());	
+		printLine("Defence: " + game.hero.getDef());	
+		printLine("Health: " + game.hero.getHp());	
+	}
+
+	@Override
 	public void load() {
 		printLine("loadGame from file");
 	}

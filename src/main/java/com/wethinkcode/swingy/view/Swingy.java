@@ -248,6 +248,11 @@ public class Swingy extends JFrame implements View{
 	}
 
 	@Override
+	public void printGameStats(Model game) {
+		printLine("TODO print game stats");	
+	}
+	
+	@Override
 	public void load(){
 		printLine("loadGame");
 	}

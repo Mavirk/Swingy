@@ -205,11 +205,16 @@ public class Controller {
 	public void loadGameMenu() {
 		currentState = state.loadGameMenu;
 		File[] saved = loaderSaver.getSavedGameList(resourcesPath);
+		swingView.clear();
 		if (saved.length > 0){
-			swingView.showSavedGames(saved);
+			Model temp;
+			for (File file : saved){
+				temp = loaderSaver.loadGame(file.getPath());
+				swingView.printGameStats(temp);
+			}
+			// swingView.showSavedGames(saved);
 			getConsoleInput();
 		}else {
-			swingView.clear();
 			swingView.printLine("No Saved Games");
 			swingView.printSpacer();
 			mainMenu();

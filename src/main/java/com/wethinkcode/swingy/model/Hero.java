@@ -77,6 +77,7 @@ public class Hero implements Serializable{
         }else
             return true;
     }
+
     public void putArtifact(Artifact item){
         switch (item.type){
             case "helm":
@@ -89,7 +90,19 @@ public class Hero implements Serializable{
                 weapon = item;
                 break;
         }
+        modifyValues(item);
     }
+
+    public void modifyValues(Artifact item){
+        int[] modifiers = item.getModifiers();
+        
+        xp =+ modifiers[0];
+        lvl =+ modifiers[1];
+        hp =+ modifiers[2];
+        def =+ modifiers[3];
+        atk=+ modifiers[4];
+    }
+    
     public void lookTile(Tile tile){
         // System.out.println("you looked at the tile");
     }

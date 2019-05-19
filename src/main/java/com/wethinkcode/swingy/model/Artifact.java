@@ -14,4 +14,8 @@ public class Artifact implements Serializable{
         type = artifactType;
         modifiers = new int[]{xpMod, levelMod, hpMod, defMod, atkMod};
     }
+    
+    public int[] getModifiers() {
+        return modifiers;
+    }
 }

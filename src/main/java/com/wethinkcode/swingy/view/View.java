@@ -23,4 +23,5 @@ public interface View {
 	void save();
 	void invalid(String input);
 	void showSavedGames(File[] savedGames);
+	void printGameStats(Model game);
 }
