@@ -10,38 +10,35 @@ public class Tile implements Serializable{
     private int y;
     private String symbol = "@";
     private Enemy enemy = null;
-    public boolean isEnemy = true;
+    public boolean isEnemy = false;
     private int danger = 0;
 
     public Tile(int xC, int yC, int size) {
         int mapRadius = size / 2;
         int i = rand.nextInt(100);
         danger = Math.abs(mapRadius - Math.max(xC, yC));
-        // System.out.println("danger : " + danger);
         x = xC;
         y = yC;
-        if(i < 50 && danger > 0) enemy = generateEnemy();
-        else isEnemy = false;
+        if(i < 50 && danger > 0){ 
+            generateEnemy();
+            isEnemy = true;
+        }
     }
 
-    public Enemy generateEnemy() {
-        String name = "Human";
-        int hp = rand.nextInt(danger * 100) + ((danger * 100) - 100);;
-        int def = rand.nextInt(danger * 10) + ((danger * 10) - 10);;
-        int atk = rand.nextInt(danger * 10) + ((danger * 10) - 10);;
-        int xp = rand.nextInt(danger * 100) + ((danger * 100) - 100);
+    private void generateEnemy() {
+        enemy = EnemyBuilder.buildMercenary();
 
-        if (danger >= 3 && danger < 6) name = "Blackknight";
-        else if (danger >= 6 && danger < 9) name = "Chimera";
-        else if (danger >= 9) name = "HellHound";
-        enemy = new Enemy(name, hp, def, atk, xp);
-        // System.out.println("enemy generated on : " + this.x + ", " + this.y);
-        return enemy;
+        if (danger >= 3 && danger < 6)
+            enemy = EnemyBuilder.buildBlackKnight();
+        else if (danger >= 6 && danger < 9)
+            enemy = EnemyBuilder.buildHellHound();
+        else if (danger >= 9) 
+            enemy = EnemyBuilder.buildChimera();
     }
 
-    public Enemy killEnemy(){
-        if(enemy.getHp() <= 0) enemy = null;
-        return enemy;
+    public void killEnemy(){
+        this.enemy = null;
+        this.isEnemy = false;
     }
     public Enemy getEnemy() {
         return enemy;

@@ -31,11 +31,14 @@ public class LoaderSaver {
     public String saveGame(Model model) {
         String gameName = model.hero.getName() + "-" + model.hero.getOccupation();
         gameName = gameName.replace("/", "");
-        String filePath = "resources/saved/" + gameName + ".ser";
+        String filePath = "./resources/saved/" + gameName + ".ser";
         System.out.println("Saving game to file: " + filePath);
         try {
             File gameFile = new File(filePath);
-            gameFile.createNewFile();
+            File parent = gameFile.getParentFile();
+            if (!parent.exists() && !parent.mkdirs()) {
+                throw new IllegalStateException("Couldn't create dir: " + parent);
+            }else gameFile.createNewFile();
             FileOutputStream fileOut = new FileOutputStream(filePath, false);
             ObjectOutput out = new ObjectOutputStream(fileOut);
             out.writeObject(model);
@@ -43,6 +46,8 @@ public class LoaderSaver {
             fileOut.close();
         } catch (IOException i) {
             i.printStackTrace();
+        } catch(IllegalStateException ise){
+            ise.printStackTrace();
         }
         System.out.printf("Game is saved in: " + filePath);
         System.out.println(filePath);

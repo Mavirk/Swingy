@@ -1,8 +1,10 @@
 package com.wethinkcode.swingy.controller;
 
 import java.io.File;
+import java.util.Random;
 import java.util.Scanner;
 
+import com.wethinkcode.swingy.model.Artifact;
 import com.wethinkcode.swingy.model.Hero;
 import com.wethinkcode.swingy.model.LoaderSaver;
 import com.wethinkcode.swingy.model.Model;
@@ -36,133 +38,45 @@ public class Controller {
 		if (viewType.equals("console"))
 			swingView = new Console(this);
 		else if (viewType.equals("swingy")) {
-			swingView = new Swingy(this);
-			console = false;
+			setupSwing();
 		}
-		debugPrint(runMode);
-		if (runMode.equals("-d")) debug = true;
+		if (runMode.equals("-d"))
+			debug = true;
 		loaderSaver = new LoaderSaver();
 		inputChecker = new InputChecker();
 	}
 
-	public void swingyClicked(String input) {
-		this.input = input;
-		buttonClicked = true;
+	public void runGame(){
+		startGame();
+		if(console){
+			while(!exit){
+				debugPrint("current state : " + currentState);
+				debugPrint("getting User input");
+				getConsoleInput();
+				debugPrint("completed state : " + prevState);
+			}
+		}
 	}
 
-	public void getConsoleInput() {
-		if (console) {
-			Scanner consoleInput = new Scanner(System.in);
-			this.input = consoleInput.next();
-		} else
-			while (!buttonClicked)
-				assert true;
-		buttonClicked = false;
-		// swingView.clear();
+	private void setupSwing(){
+		swingView = new Swingy(this);
+		console = false;
+		swingView.getButton().addActionListener(e -> swingyClicked());
+	}
+	
+	public void swingyClicked() {
+		this.input = null;
+		this.input = swingView.getInput().getText();
+		swingView.getInput().setText("");
+		debugPrint(input);
 		switchStates();
 	}
 
-	public void switchStates() {
-		// swingView.printLine("current input: " + input);
-		// swingView.printLine("current state: " + currentState);
-		prevState = currentState;
-		switch (currentState) {
-		case startGame:
-			mainMenu();
-			break;
-		case main:
-			if (input.equals("new"))
-				newGame();
-			else if (input.equals("load"))
-				loadGameMenu();
-			else
-				invalidInput();
-			break;
-		case newGame:
-			characterName();
-			break;
-		case loadGame:
-			navigationMenu();
-			break;
-		case loadGameMenu:
-			if (inputChecker.checkLoadInput(input))
-				loadGame(input);
-			else
-				invalidInput();
-			break;
-		case characterName:
-			playerName = input;
-			characterCreationMenu();
-			break;
-		case characterCreation:
-			createCharacter(playerName, input);
-			saveGame();
-			navigationMenu();
-			break;
-		case navigation:
-			if (inputChecker.checkNavigationInput(input)) {
-				exit = model.hero.moveDirection(input);
-				if (exit && model.hero.getHp() > 0)
-					win();
-				while (model.hero.getCurrentTile().isEnemy && model.hero.getHp() > 0)
-					fightMenu();
-				navigationMenu();
-			} else
-				invalidInput();
-			break;
-		case fightMenu:
-			if (input.equals("fight"))
-				fight();
-			else if (input.equals("run"))
-				run();
-			else
-				invalidInput();
-			break;
-		case lootMenu:
-			if (input.equals("take")) {
-				if (model.hero.getCurrentTile().getEnemy().artifact != null) {
-					model.hero.putArtifact(model.hero.getCurrentTile().getEnemy().artifact);
-					System.out.println("I have a new "
-							+ model.hero.getItemArtifact(model.hero.getCurrentTile().getEnemy().artifact.type).name);
-				} else
-					System.out.println("there is nothiung even though there should be something");
-				navigationMenu();
-			} else if (input.equals("leave"))
-				;
-			else
-				invalidInput();
-			break;
-		case battle:
-			fightOutcome();
-			break;
-		case fightOutcome:
-			if (model.hero.getCurrentTile().getEnemy().getHp() <= 0) {
-				lootMenu();
-				model.hero.getCurrentTile().killEnemy();
-			} else if (model.hero.getHp() <= 0)
-				deathMenu();
-			break;
-		case win:
-			model.hero.levelUp();
-			saveGame();
-			if (input.equals("continue"))
-				continueGame();
-			else if (input.equals("exit"))
-				exit();
-			else
-				invalidInput();
-			break;
-		case death:
-			if (input.equals("menu"))
-				mainMenu();
-			else if (input.equals("exit"))
-				exit();
-			else
-				invalidInput();
-			break;
-		default:
-			print("default case insantiated Please review code");
-		}
+	public void getConsoleInput() {
+		this.input = null;
+		Scanner consoleInput = new Scanner(System.in);
+		this.input = consoleInput.next();
+		switchStates();
 	}
 
 	public void startGame() {
@@ -172,7 +86,7 @@ public class Controller {
 	public void mainMenu() {
 		currentState = state.main;
 		swingView.main();
-		getConsoleInput();
+		// getConsoleInput();
 	}
 
 	public void continueGame() {
@@ -182,7 +96,7 @@ public class Controller {
 	public void newGame() {
 		currentState = state.newGame;
 		model.world = model.generateWorld(0);
-		characterName();
+		switchStates();
 	}
 
 	public void saveGame() {
@@ -213,7 +127,7 @@ public class Controller {
 				swingView.printGameStats(temp);
 			}
 			// swingView.showSavedGames(saved);
-			getConsoleInput();
+			// getConsoleInput();
 		}else {
 			swingView.printLine("No Saved Games");
 			swingView.printSpacer();
@@ -225,22 +139,23 @@ public class Controller {
 		currentState = state.characterName;
 		swingView.clear();
 		swingView.characterName();
-		getConsoleInput();
+		// getConsoleInput();
 	}
 
 	public void characterCreationMenu() {
 		currentState = state.characterCreation;
 		swingView.clear();
 		swingView.characterCreation();
-		getConsoleInput();
+		// getConsoleInput();
 	}
 
 	public void navigationMenu() {
 		currentState = state.navigation;
 		swingView.clear();
+		swingView.printHeroStats(model.hero);
 		swingView.printMap(model.hero.getX(), model.hero.getY(), model.world.size);
 		swingView.navigation();
-		getConsoleInput();
+		// getConsoleInput();
 	}
 	
 
@@ -248,23 +163,18 @@ public class Controller {
 		currentState = state.fightMenu;
 		swingView.clear();
 		swingView.fightMenu(model.hero, model.hero.getCurrentTile().getEnemy());
-		getConsoleInput();
+		// getConsoleInput();
 	}
 
 	public void lootMenu() {
 		currentState = state.lootMenu;
-		if (model.hero.getCurrentTile().getEnemy().artifact != null) {
-			swingView.loot(model.hero.getCurrentTile().getEnemy().artifact);
-			getConsoleInput();
-		} else {
-			swingView.printLine("No loot found in the corpse");
-		}
+		swingView.lootMenu(model.hero.getCurrentTile().getEnemy().getArtifact());
 	}
 
 	public void deathMenu() {
 		currentState = state.death;
 		swingView.death();
-		getConsoleInput();
+		exit();
 	}
 
 	public void win() {
@@ -272,18 +182,25 @@ public class Controller {
 		swingView.printLine("You escaped the map well done");
 		swingView.printLine("continue");
 		swingView.printLine("exit");
-		getConsoleInput();
+		// getConsoleInput();
 	}
 
 	public void exit() {
 		System.exit(0);
 	}
 
-	public void fight() {
+	public void battle() {
 		currentState = state.battle;
-		model.hero.attackEnemy(model.hero.getCurrentTile().getEnemy());
-		swingView.battle(model.hero, model.hero.getCurrentTile().getEnemy());
-		switchStates();
+		boolean fight = true;
+		while (fight){
+			model.hero.attackEnemy(model.hero.getCurrentTile().getEnemy());
+			swingView.battle(model.hero, model.hero.getCurrentTile().getEnemy());
+			if(model.hero.getHp() <= 0)
+				fight = false;
+			if(model.hero.getCurrentTile().getEnemy().getHp() <= 0)
+				fight = false;
+		}
+		fightOutcome();
 	}
 
 	public void fightOutcome() {
@@ -291,10 +208,12 @@ public class Controller {
 		swingView.fightOutcome(model.hero, model.hero.getCurrentTile().getEnemy());
 		if (model.hero.getHp() <= 0)
 			characterDeath();
-		else if (model.hero.getCurrentTile().getEnemy().getHp() > 0)
-			fightMenu();
-		else
+		else{
+			if (model.hero.levelUp()){
+				swingView.printLevelUp(model.hero);
+			}
 			switchStates();
+		}
 	}
 
 	public void characterDeath() {
@@ -304,29 +223,43 @@ public class Controller {
 	}
 
 	public void run() {
-		model.hero.runAway();
-		swingView.printLine("hero ran away...COWARD");
-		navigationMenu();
+		Random rand = new Random(100);
+		int runaway = rand.nextInt();
+		if (runaway > 49){
+			model.hero.runAway();
+			swingView.printLine("hero ran away...COWARD");
+			navigationMenu();
+		}else battle();
 	}
 
 	public void createCharacter(String name, String occupation) {
 		switch (occupation) {
-		case "archer":
-			model.hero = new Hero(name, occupation, 0, 0, 100, 10, 30, model.world);
-			break;
-		case "knight":
-			model.hero = new Hero(name, occupation, 0, 0, 100, 20, 20, model.world);
-			break;
-		case "paladin":
-			model.hero = new Hero(name, occupation, 0, 0, 200, 30, 10, model.world);
-			break;
-		case "wizard":
-			model.hero = new Hero(name, occupation, 0, 0, 1000, 1000, 1000, model.world);
-			break;
-		default:
-			invalidInput();
+			case "archer":
+				model.hero = new Hero(name, occupation, 0, 0, 150, 20, 50, model.world);
+				break;
+			case "knight":
+				model.hero = new Hero(name, occupation, 0, 0, 200, 25, 40, model.world);
+				break;
+			case "paladin":
+				model.hero = new Hero(name, occupation, 0, 0, 300, 35, 25, model.world);
+				break;
+			case "wizard":
+				model.hero = new Hero(name, occupation, 0, 0, 1000, 1000, 1000, model.world);
+				break;
+			default:
+				invalidInput();
 		}
 	}
+
+	// private boolean checkGameWin(){
+	// 	int yCoor = model.hero.getY();
+	// 	int xCoor = model.hero.getX();
+	// 	int worldSize = model.world.size;
+	// 	if (yCoor >= 0 && xCoor >= 0 && xCoor < worldSize && yCoor < worldSize){
+	// 		return false;
+	// 	}
+	// 	return true;
+	// }
 
 	public void doNothing() {
 		assert true;
@@ -337,7 +270,7 @@ public class Controller {
 		debugPrint("current state: " + currentState);
 		debugPrint("prev state: " + prevState);
 		currentState = prevState;
-		getConsoleInput();
+		// getConsoleInput();
 	}
 
 	public void print(String error) {
@@ -345,7 +278,129 @@ public class Controller {
 	}
 
 	private void debugPrint(String debugMessage){
-		if (debug = true)System.out.println("DEBUG: " + debugMessage);
+		if (debug == true)
+			System.out.println("DEBUG: " + debugMessage);
+	}
+
+	public void switchStates() {
+		prevState = currentState;
+		switch (currentState) {
+
+			case startGame:
+				mainMenu();
+				break;
+
+			case main:
+				if (input.equals("new"))
+					newGame();
+				else if (input.equals("load"))
+					loadGameMenu();
+				else
+					invalidInput();
+				break;
+			
+			case newGame:
+				characterName();
+				break;
+
+			case loadGameMenu:
+				if (inputChecker.checkLoadInput(input))
+					loadGame(input);
+				else
+					invalidInput();
+				break;		
+
+			case characterName:
+				playerName = input;
+				characterCreationMenu();
+				break;
+
+			case characterCreation:
+				createCharacter(playerName, input);
+				saveGame();
+				navigationMenu();
+				break;
+
+			case loadGame:
+				navigationMenu();
+				break;
+
+			case navigation:
+				if (inputChecker.checkNavigationInput(input)) {					
+					if(model.hero.moveDirection(input))
+						win();
+					else if(model.hero.getCurrentTile().isEnemy){
+						fightMenu();
+					}else{
+						navigationMenu();
+					}
+
+				} else
+					invalidInput();
+
+				break;
+
+			case fightMenu:
+				if (input.equals("fight"))
+					battle();
+				else if (input.equals("run"))
+					run();
+				else
+					invalidInput();
+				break;
+
+			case battle:
+				break;
+
+			case fightOutcome:
+				if (model.hero.getCurrentTile().getEnemy().getHp() <= 0 && 
+					model.hero.getCurrentTile().getEnemy().getArtifact() != null) {
+					lootMenu();
+				} 
+				else if (model.hero.getHp() <= 0)
+					deathMenu();
+				else{ 
+					model.hero.killEnemy();
+					navigationMenu();
+				}
+				break;
+
+			case lootMenu:
+				if (input.equals("take")) {
+					Artifact tempArtifact;
+					tempArtifact =  model.hero.getCurrentTile().getEnemy().getArtifact();
+					model.hero.killEnemy();
+					model.hero.putArtifact(tempArtifact);
+					navigationMenu();
+				} 
+				else if (input.equals("leave"))
+					navigationMenu();
+				else if (!input.isEmpty()) 
+					invalidInput();
+				break;
+
+			case death:
+				if (input.equals("menu"))
+					mainMenu();
+				else if (input.equals("exit"))
+					exit();
+				else
+					invalidInput();
+				break;
+
+			case win:
+				saveGame();
+				if (input.equals("continue"))
+					continueGame();
+				else if (input.equals("exit"))
+					exit();
+				else
+					invalidInput();
+				break;
+				
+			default:
+				print("default case insantiated Please review code");
+		}
 	}
 
 }

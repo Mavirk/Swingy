@@ -11,31 +11,16 @@ public class Enemy implements Serializable{
     private int def;
     private int atk;
     private int xp;
-    public Artifact artifact = null;
+    private Artifact artifact = null;
 
     //    constructer
-    public Enemy(String n, int h, int d, int a, int x) {
-        int i = rand.nextInt(100);
-        name = n;
-        hp = h;
-        def = d;
-        atk = a;
-        xp = x;
-        if (i < 30) generateLoot();
+    public Enemy(String name, int health, int defence, int attack, int experience) {
+        this.name = name;
+        hp = health;
+        def = defence;
+        atk = attack;
+        xp = experience;
     }
-
-    public void generateLoot() {
-        artifact = new Artifact(
-                "hammer",
-                "weapon",
-                0,
-                0,
-                0,
-                0,
-                12
-        );
-    }
-
     //    getters
     public String getName() {
         return name;
@@ -57,6 +42,10 @@ public class Enemy implements Serializable{
         return xp;
     }
 
+    public Artifact getArtifact(){
+        return artifact;
+    }
+
     //    setters
     public void setName(String i) {
         name = i;
@@ -74,11 +63,8 @@ public class Enemy implements Serializable{
         atk = i;
     }
 
+    public void setArtifact(Artifact artifact){
+        this.artifact = artifact;
+    }
+
 }
-//    public Artifact dropLoot(){
-//        System.out.println("The "+name+" dropped a "+artifact.type);
-//        if (artifact != null) {
-//            return artifact;
-//        }
-//        return null;
-//    }

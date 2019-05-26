@@ -9,10 +9,10 @@ public class Artifact implements Serializable{
     public int damage = 10;
     public int[] modifiers;
 
-    public Artifact(String artifactName, String artifactType, int xpMod, int levelMod, int hpMod, int defMod, int atkMod){
+    public Artifact(String artifactName, String artifactType, int hpMod, int defMod, int atkMod){
         name = artifactName;
         type = artifactType;
-        modifiers = new int[]{xpMod, levelMod, hpMod, defMod, atkMod};
+        modifiers = new int[]{hpMod, defMod, atkMod};
     }
     
     public int[] getModifiers() {

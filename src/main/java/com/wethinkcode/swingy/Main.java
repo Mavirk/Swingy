@@ -9,7 +9,7 @@ public class Main {
         else runMode = "";
         try {
         Controller controller = new Controller(args[0], runMode);
-            controller.startGame();
+        controller.runGame();
 
         } catch (Exception e) {
             e.printStackTrace();
