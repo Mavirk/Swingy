@@ -3,8 +3,15 @@ package com.wethinkcode.swingy.model;
 import java.io.Serializable;
 import java.util.Random;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
+
 public class Hero implements Serializable{
     private static final long serialVersionUID = 1L;
+
+    @NotBlank(message = "Name can not be empty")
+    @Size(min = 1, max = 16, message = "Name must be between 1 and 16 characters")
+    
     private String name;
     private String occupation;
 
@@ -203,6 +210,10 @@ public class Hero implements Serializable{
                 item = null;
         }
         return item;
+    }
+
+    public boolean validateHero(){
+        
     }
 
 //    setters
